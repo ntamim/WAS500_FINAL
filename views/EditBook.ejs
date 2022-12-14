@@ -1,0 +1,58 @@
+<%- include('./partials/Header.ejs')%>
+<style>
+  label{
+    margin-right: 2rem;
+  }
+</style>
+
+
+    <div class="grid grid-cols-12">
+      <div class="col-span-12 sm:col-span-3 bg-gray-200">
+        <%- include('./partials/Sidebar.ejs')%>
+      </div>
+      <!-- Center Horizontal and Vertical -->
+      <div class="col-span-12 sm:col-span-9 bg-gray-100 ">
+    <!-- Card -->
+    <h1 class="text-4xl text-blue-400 font-black my-6 text-center"><b>Book Details</b></h1>
+    <!-- Information of the book -->
+    <% if(book) { %>
+      <div class="my-2 mx-16">
+      <form action="/storeedit" method="get">
+        <div class="mt-2">
+        <input type="hidden" name="id" value="<%= book._id %>">
+        <label for="team_name">Enter Name of the book: </label>
+    <input
+      id="name"
+      type="text"
+      name="name"
+      value="<%= book.name %>" class="py-1 w-6/12 px-2 border bg-blue-200" required/>
+        </div>
+        <div class="mt-2">
+      <label for="team_name">Enter Author's Name:  </label>
+      <input
+        id="author_name"
+        type="text"
+        name="author_name"
+        value="<%= book.author_name %>" class="py-1 w-6/12 px-2 border bg-blue-200" required/>
+      </div>
+      <div class="mt-2 flex items-center">   
+      <label for="team_name">Enter Description: </label>
+        <textarea
+          id="description"
+          type="text"
+          
+          rows="4"
+          name="description"
+          value="<%= book.description %>" required class="py-1 w-6/12 px-2 border bg-blue-200" ><%= book.description %></textarea>
+        </div>
+        <div class="mt-2 text-center">
+    <input type="submit" value="OK" class="w-48 py-2 px-3 bg-blue-400 rounded-md " />
+
+  <div class="mt-2">
+    </form>
+    </div>
+    <%  }; %>
+  </div>
+
+  </body>
+</html>

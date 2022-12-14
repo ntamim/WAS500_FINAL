@@ -1,0 +1,42 @@
+<%- include('./partials/Header.ejs')%>
+
+    <div class="grid grid-cols-12">
+      <div class="col-span-12 sm:col-span-3 bg-gray-200">
+        <%- include('./partials/Sidebar.ejs')%>
+      </div>
+
+      <!-- Center Horizontal and Vertical -->
+      <div class="col-span-12 sm:col-span-9 bg-gray-100">
+
+
+        <!-- Card -->
+        <p class="text-3xl text-blue-400 font-black my-6 text-center">Add New Book</p>
+        <!-- Information of the book -->
+        <div class="w-full ">
+          <form action="/storeadd" method="get" class="text-center">
+            <div class="mt-2">
+
+              <input type="text" placeholder="Enter Name: " name="name" value=""
+                class="py-1 w-6/12 px-2 font-black border bg-blue-200" required />
+            </div>
+            <div class="mt-2">
+              <input id="author_name" placeholder="Enter Author name: " type="text" name="author_name" value=""
+                class="py-1 w-6/12 px-2 font-black border bg-blue-200" required />
+            </div>
+            <div class="mt-2">
+              <textarea id="description" type="text" placeholder="Enter Description: " name="description" value=""
+                required class="py-1 w-6/12 px-2 font-black border bg-blue-200"></textarea>
+            </div>
+            <div class="mt-2">
+              <input type="submit" value="Save" class="py-2 px-2 w-48 bg-blue-400 font-bold rounded-md text-white" />
+
+              <div class="mt-2">
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+      </body>
+
+      </html>
